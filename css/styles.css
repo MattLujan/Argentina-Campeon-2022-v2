@@ -1,0 +1,790 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--blanco-fondo);
+    font-family: sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+:root {
+    --blanco-fondo: #ffffff;
+    --celeste-afa: #89caf0;
+    --dorado-copa: #FFD700;
+}
+
+/* ---------- HEADER ----------- */
+
+header {
+    background-color: var(--celeste-afa);
+}
+
+.navbar-principal{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--celeste-afa);
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+
+
+.menu-links {
+    display: flex;
+    gap: 20px;
+    font-size: 1.4rem;
+    list-style: none;
+}
+
+.logo-afa-header {
+    width: 125px;
+    height: 110px;
+    object-fit: cover;
+
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: white;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.menu-links a:hover {
+    color: var(--dorado-copa);
+}
+
+/* ---------- FOOTER ----------- */
+
+footer {
+    padding: 40px 0;
+    height: 160px;
+    background-image: url(../images/BANNER-LOGO-960x270.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #2a010f
+}
+
+.navbar-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 30px;
+}
+
+.redes-sociales a {
+    color:aliceblue;
+    text-decoration: none;
+}
+
+.navbar-footer p {
+    color: aliceblue;
+}
+
+.logo-fifa-qatar2022 {
+    width: 125px;
+}
+
+.logo-qatar-container {
+    position: relative;
+    width: 140px;
+    height: 70px;
+    background-image: url("./images/logo-fifa-qatar2022.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Área clic invisible */
+.logo-click-area {
+    position: absolute;
+    inset: 0;
+    /* ocupa todo el logo */
+    cursor: pointer;
+}
+
+/* ================== INDEX.HTML ================== */
+
+main {
+    margin: 145px auto 0 auto;
+    max-width: 1200px;
+}
+
+.hero {
+    border-bottom: ridge 2px var(--dorado-copa);
+}
+
+.hero h1, .h1-fase-de-grupos {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero figure {
+    margin-top: 10px;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    /* Esto mantiene la proporción para que no se vea estirada */
+    display: block;
+    /* Ayuda a que no queden espacios raros abajo */
+    margin: 0 auto;
+    /* Si la imagen es más chica que el contenedor, la centra */
+}
+
+.hero figcaption {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 5px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.argentina-en-qatar2022 {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-evenly;
+}
+
+
+.video-item h3 {
+    text-align: center;
+    margin-bottom: 8px;
+    max-width: 420px;
+    font-size: 1.1rem;
+}
+
+.video-item p {
+    max-width: 420px;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+
+
+/* ================== FASE-DE-GRUPOS.HTML ===================== */
+
+.h1-fase-de-grupos {
+    text-decoration: underline;
+}
+
+.previa-galeria-fotos {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.fotos-previa-mundial {
+    height: 210px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.previa-al-mundial {
+    border-bottom: 3px groove var(--dorado-copa);
+}
+
+.previa-al-mundial p {
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+
+
+.previa-galeria-fotos figcaption, .multimedia-arg-hol figcaption, .contenedor-cronica-arg-cro figcaption {
+    margin: 10px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.grupo-c {
+    margin-top: 25px;
+    border-bottom: 3px groove var(--dorado-copa);
+}
+
+.header-grupo-c {
+    display: flex;
+    background-color: var(--blanco-fondo);
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.header-grupo-c h2 {
+    margin-bottom: 10px;
+}
+
+.header-grupo-c p, .tarjeta-partido p {
+    font-size: 1.1rem;
+}
+
+.banderas-grupo-c {
+    display: flex;
+    gap: 20px;
+}
+
+.banderas-grupo-c img {
+    height: 80px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.contenedor-partidos-fase-de-grupo {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.partido-arabia {
+    border-top: 8px solid #005430;
+    /* Verde Arabia */
+    background-color:#a9dab6;
+}
+
+.partido-mexico {
+    border-top: 8px solid var(--celeste-afa);
+    background-color: #bfe0f0;
+}
+
+.partido-polonia {
+    border-top: 8px solid #4b0082;
+    /* El violeta de la suplente */
+    background-color: #d8cae5;
+}
+
+.tarjeta-partido {
+    width: 30%;
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+}
+
+.tarjeta-partido:hover {
+    transform: translateY(-10px);
+    /* Mueve la tarjeta 10px hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Crea una sombra más profunda */
+    border-color: var(--dorado-copa);
+    /* Opcional: cambia el borde al dorado que definimos */
+}
+
+.tarjeta-partido h3, .tarjeta-partido p{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.resumen-p-arg-asau, .resumen-p-arg-mex {
+    height: 100px;
+}
+ 
+.escudos-resultados-goles {
+    display: flex;
+    justify-content: space-between;
+}
+
+.esc-res-gol-arg, .esc-res-gol-asau, .esc-res-gol-mex, .esc-res-gol-pol, .esc-res-gol-aust, .esc-res-gol-hol, .esc-res-gol-fra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta-partido img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover; 
+}
+
+.escudos-resultados-goles .esc-res-gol-arg .resultado-part-nro, .escudos-resultados-goles .esc-res-gol-asau .resultado-part-nro, .escudos-resultados-goles .esc-res-gol-mex .resultado-part-nro, .escudos-resultados-goles .esc-res-gol-pol .resultado-part-nro, .esc-res-gol-aust .resultado-part-nro, .esc-res-gol-hol .resultado-part-nro, .esc-res-gol-cro .resultado-part-nro, .esc-res-gol-fra .resultado-part-nro {
+    margin: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.gol-arabia {
+    margin-left: 5px;
+}
+
+.gol-julian-polonia {
+    margin-right: 35px;
+}
+
+.video-container iframe {
+    width: 100%;
+    border-radius: 8px;
+    /* Opcional: para que las esquinas del video sean suaves como tu tarjeta */
+}
+
+.estadio-arbitro {
+    margin-top: 20px;
+}
+
+.tabla-de-posiciones {
+    margin: 15px;
+}
+
+.tabla-de-posiciones h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Quita el espacio doble entre bordes */
+    border-radius: 12px;
+    overflow: hidden;
+    /* Para que el borde redondeado corte las esquinas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-container th {
+    background-color: #0c5460;
+    /* Un color oscuro y serio */
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.table-container td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Un gris muy sutil */
+}
+
+/* El efecto de resaltar los que clasifican */
+.fila-resaltada {
+    background-color: rgba(216, 239, 11, 0.2);
+    /* Un amarillo muy suave, casi transparente */
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clasificacion-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* Un gris muy clarito */
+    border-radius: 15px;
+}
+
+.card-clasificados {
+    background-color: white;
+    padding: 15px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--dorado-copa);
+    /* Usamos tu dorado */
+    text-align: center;
+}
+
+.card-clasificados h4 {
+    color: #0c5460;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card-clasificados ol {
+    list-style-position: inside;
+    font-size: 1.1rem;
+}
+
+.alerta-clasificacion {
+    max-width: 600px;
+    font-size: 0.95rem;
+    color: #666;
+    background-color: #fff3cd;
+    /* Color cremita tipo advertencia */
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ffeeba;
+}
+
+.alerta-clasificacion strong {
+    color: #856404;
+}
+
+
+/* ================== OCTAVOS-DE-FINAL.HTML =================== */
+
+.h1-octavos-de-final, .ficha-partido h2, .h1-cuartos-de-final, .ficha-partido-arg-hol h2, .h1-semifinal, .h1-final {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.octavos-de-final {
+    display: flex;
+    margin-top: 40px;
+    gap:20px;
+    align-items: flex-start;
+}
+
+.contenedor-cronica-arg-aus {
+    width: 60%;
+}
+
+.contenedor-cronica-arg-aus h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.fotos-cronica-arg-aus {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.fotos-cronica-arg-aus div {
+    width: 50%;
+}
+
+.fotos-cronica-arg-aus img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.fotos-cronica-arg-aus p, .fotos-cronica-arg-cro p {
+    font-size: 1.1rem;
+}
+
+.gol-julian-australia {
+    height: 252px;
+}
+
+.gol-messi-australia {
+    height: 213px;
+}
+
+.video-container p {
+    text-align: center;
+    margin: 25px;
+    font-size: 1.1rem;
+}
+
+.partido-australia {
+    border-top: 8px solid #2c3e50;
+    background-color: #b8d9f2;
+    padding: 20px;
+    
+}
+
+.ficha-partido {
+    width: 40%;
+}
+
+.ficha-partido h2 {
+    margin-bottom: 25px;
+}
+
+.julian-australia {
+    margin-left: 10px;
+}
+
+.estadisticas-arg-aust, .estadisticas-arg-cro {
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+}
+
+
+/* 2. Diseño simple para las estadísticas (en fila) */
+.posesion-arg-aust, .tiros-arg-aust, .fouls-arg-aust, .corners-arg-aust, .posesion-arg-cro, .tiros-arg-cro, .fouls-arg-cro, .corners-arg-cro {
+    display: flex;
+    justify-content: space-between; /* Uno a cada punta */
+    align-items: center;
+    background: white; /* Fondo blanco para que resalte del celeste */
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* 3. Estilo a los numeritos */
+.posesion-arg-aust p, .tiros-arg-aust p, .fouls-arg-aust p, .corners-arg-aust p, .posesion-arg-cro p,
+.tiros-arg-cro p, .fouls-arg-cro p, .corners-arg-cro p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* 4. Color para los datos de Argentina (el primer <p> de cada fila) */
+.posesion-arg-aust p:first-child, 
+.tiros-arg-aust p:first-child, 
+.fouls-arg-aust p:first-child, 
+.corners-arg-aust p:first-child, 
+.posesion-arg-cro p:first-child, 
+.tiros-arg-cro p:first-child, 
+.fouls-arg-cro p:first-child, 
+.corners-arg-cro p:first-child {
+    color: #74acdf; /* Celeste AFA */
+}
+
+/* ================== CUARTOS-DE-FINAL.HTML =================== */
+
+.contenedor-arg-hol {
+    display: flex;
+    margin-top: 30px;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.cronica-ficha-partido-arg-hol {
+    width:50%;
+}
+
+.cronica-ficha-partido-arg-hol h2 {
+    margin: 15px 0;
+}
+
+.multimedia-arg-hol {
+    width: 50%;
+}
+
+.batalla-lusail {
+    border-bottom: 3px groove var(--dorado-copa);
+}
+
+.batalla-lusail p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.batalla-lusail span {
+    font-weight: bold;
+}
+
+.fotos-arg-hol {
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.ficha-partido-arg-hol {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.partido-holanda {
+    border-top: 8px solid #e77219;
+    background-color: #b8d9f2;
+    padding: 20px;
+}
+
+.gol-messi-hol {
+    margin-left: 34px;
+}
+
+.gol-weghorst {
+    margin-right: 40px;
+}
+
+.multimedia-arg-hol .video-container .resumen-arg-hol-p {
+    margin: 0;
+}
+
+/* ================== SEMIFINAL.HTML ========================== */
+
+.semifinal {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.contenedor-cronica-arg-cro {
+    width: 50%;
+}
+
+.contenedor-cronica-arg-cro h2 {
+    margin-bottom: 10px;
+}
+
+.contenedor-cronica-arg-cro img {
+    border-radius: 10px;
+}
+
+.contenedor-cronica-arg-cro figure {
+    margin-top: 20px;
+}
+
+.fotos-cronica-arg-cro {
+    display: flex;
+}
+
+
+.partido-croacia {
+    border-top: 8px solid #1e086f;
+    background-color: #b8d9f2;
+    padding: 20px;
+}
+
+.gol-julian-croacia {
+    margin-right: 40px;
+}
+
+.foto-julian-gol-croacia {
+    max-width: 400px;
+}
+
+/* ================== FINAL.HTML ============================== */
+
+.final-container {
+    display: flex;
+    margin-top: 25px;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.columna-izquierda h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.columna-izquierda .negrita {
+    font-weight: bold;
+}
+
+.columna-izquierda .cursiva {
+    font-style: italic;
+}
+
+.resumen-final {
+    font-size: 1.4rem;
+}
+
+.resumen-final p {
+    margin-bottom: 20px;
+}
+
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    /* Esto empuja la ficha del partido hacia abajo */
+}
+
+.columna-derecha h2 {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.fotos-goles-final {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.fotos-goles-final img {
+    width: 100%;
+    height: 250px;
+    border: 2px solid var(--dorado-copa);
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.ficha-partido-final {
+    width: 100%;
+}
+
+.partido-francia {
+    border-top: 8px solid #002395;
+    background-color: #bfe0f0;
+    margin-top: 25px;
+}
+
+.gol-messi-francia {
+    margin-right: 40px;
+}
+
+.gol-di-maria-francia {
+    margin-right: 30px;
+}
+
+.gol-mbappe-1 {
+    margin-right: 10px;
+}
+.gol-mbappe-2 {
+    margin-right: 60px;
+}
+
+.gol-penal {
+    color: green;
+    font-weight: bold;
+}
+
+.penal-fallado {
+    color: red;
+    font-weight: bold;
+}
+
+.escudos-resultados-goles {
+    margin-bottom: 20px;
+}
+
+.definicion-penales {
+    display: flex;
+    justify-content: space-around;
+}
+
+.poster-final {
+    margin-top: 50px;
+    border-top: 3px double var(--dorado-copa);
+    /* Una línea dorada de gala */
+    padding-top: 20px;
+}
+
+.poster-final img {
+    width: 100%;
+}
+
+.poster-final figcaption {
+    text-align: center;
+    margin: 10px;
+    font-size: 1.1rem;
+}
