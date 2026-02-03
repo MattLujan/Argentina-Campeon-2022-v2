@@ -35,9 +35,12 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-
+    left: 0;
 }
 
+.btn-menu {
+    display: none;
+}
 
 .menu-links {
     display: flex;
@@ -68,18 +71,24 @@ header {
 
 footer {
     padding: 40px 0;
-    height: 160px;
+    min-height: 160px;
     background-image: url(../images/BANNER-LOGO-960x270.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-color: #2a010f
+    background-color: #2a010f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-footer {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 20px;
 }
 
 .redes-sociales {
@@ -87,35 +96,23 @@ footer {
     gap: 30px;
 }
 
-.redes-sociales a {
+.redes-sociales a, .navbar-footer p {
     color:aliceblue;
     text-decoration: none;
 }
 
-.navbar-footer p {
-    color: aliceblue;
+.firma-autor {
+    color: inherit;
+    /* Hereda el color aliceblue del párrafo */
+    text-decoration: none;
+    /* Quita el subrayado */
+    transition: 0.3s;
+    /* Para que el cambio de color sea suave */
 }
 
-.logo-fifa-qatar2022 {
-    width: 125px;
-}
-
-.logo-qatar-container {
-    position: relative;
-    width: 140px;
-    height: 70px;
-    background-image: url("./images/logo-fifa-qatar2022.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Área clic invisible */
-.logo-click-area {
-    position: absolute;
-    inset: 0;
-    /* ocupa todo el logo */
-    cursor: pointer;
+.firma-autor:hover {
+    color: var(--dorado-copa);
+    /* ¡Se pone dorado cuando pasas el mouse! */
 }
 
 /* ================== INDEX.HTML ================== */
@@ -163,11 +160,12 @@ main {
 
 .argentina-en-qatar2022 {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     margin-top: 15px;
-    justify-content: space-evenly;
+    width: 100%;
 }
-
 
 .video-item h3 {
     text-align: center;
@@ -183,8 +181,37 @@ main {
     margin: 10px 0;
 }
 
+.argentina-en-qatar2022 h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
 
+.videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: flex-start;
+    /* Alinea los videos por la parte superior */
+    gap: 20px;
+    width: 100%;
+}
 
+.video-item {
+    padding: 10px;
+    /* Reducimos un poco el padding para que no empuje tanto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra el h3, el iframe y el p internamente */
+}
+
+.video-item iframe {
+    max-width: 420px;
+    width: 100%;
+    /* Para que sea responsivo */
+}
 
 /* ================== FASE-DE-GRUPOS.HTML ===================== */
 
@@ -787,4 +814,102 @@ tbody tr:hover {
     text-align: center;
     margin: 10px;
     font-size: 1.1rem;
+}
+
+
+
+/* =!=!=!=!=!=!=!=! MEDIA QUERIES =!=!=!=!=!=!=!=! */
+
+@media (max-width: 1294px) {
+    .menu-links a {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+     main {
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .argentina-en-qatar2022 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-item iframe {
+        height: 250px;
+    }
+
+    .logo-afa-header {
+    width: 90px;
+    height: auto;
+    }
+
+    .menu-links {
+        flex-direction: column;
+        font-size: 1.1rem;
+        align-items: center;
+        display: none;
+    }
+
+    .menu-links a {
+        padding: 10px 0;
+        margin-bottom: 15px
+    }
+
+    .navbar-principal {
+        flex-direction: column;
+        position: static;
+    }
+
+    .btn-menu { 
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color:var(--dorado-copa)
+    }
+
+    .menu-links.active {
+        display: flex;
+    }
+
+    footer {
+    height: auto;
+    padding: 30px 15px;
+    background-size: contain;
+    }
+
+    .navbar-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        gap: 10px;
+    }
+
+    .redes-sociales {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 40%;
+        gap: 8px;
+    }
+
+    .copyright {
+        width: 50%;
+        text-align: right;
+        margin-top: 0;
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+
 }
