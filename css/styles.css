@@ -132,7 +132,7 @@ main {
 }
 
 .hero figure {
-    margin-top: 10px;
+    margin: 20px;
 }
 
 .hero img {
@@ -847,7 +847,6 @@ tbody tr:hover {
 
     .logo-afa-header {
     width: 90px;
-    height: auto;
     }
 
     .menu-links {
