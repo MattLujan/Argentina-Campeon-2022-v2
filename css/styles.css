@@ -270,7 +270,7 @@ main {
     margin-bottom: 10px;
 }
 
-.header-grupo-c p, .tarjeta-partido p {
+.header-grupo-c p, .tarjeta-partido p, .tarjeta-partido-aust p {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
@@ -324,7 +324,6 @@ main {
     justify-content: space-between;
     height: 100%;
     min-width: 280px;
-
 }
 
 .tarjeta-partido:hover {
@@ -336,7 +335,7 @@ main {
     /* Opcional: cambia el borde al dorado que definimos */
 }
 
-.tarjeta-partido h3, .tarjeta-partido p{
+.tarjeta-partido h3, .tarjeta-partido p, .tarjeta-partido-aust h3{
     margin-bottom: 10px;
     text-align: center;
 }
@@ -360,7 +359,7 @@ main {
     align-items: center;
 }
 
-.tarjeta-partido img {
+.tarjeta-partido img, .tarjeta-partido-aust img {
     height: 100px;
     width: 100px;
     object-fit: cover; 
@@ -508,11 +507,13 @@ tbody tr:hover {
     display: flex;
     margin-top: 40px;
     gap:20px;
-    align-items: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.contenedor-cronica-arg-aus {
-    width: 60%;
+.contenedor-cronica-arg-aus,  .columna-derecha-informacion{
+    width: 48%;
 }
 
 .contenedor-cronica-arg-aus h2 {
@@ -524,10 +525,12 @@ tbody tr:hover {
     display: flex;
     margin-bottom: 20px;
     gap: 15px;
+    align-items: center;
+    flex-direction: column;
 }
 
 .fotos-cronica-arg-aus div {
-    width: 50%;
+    width: 100%;
 }
 
 .fotos-cronica-arg-aus img {
@@ -540,29 +543,71 @@ tbody tr:hover {
     font-size: 1.1rem;
 }
 
-.gol-julian-australia {
-    height: 252px;
-}
-
-.gol-messi-australia {
-    height: 213px;
-}
-
 .video-container p {
     text-align: center;
     margin: 25px;
     font-size: 1.1rem;
 }
 
+.video-full-width {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding-top: 0;
+}
+
+.video-full-width iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.video-full-width p {
+    margin: 0;
+    padding: 25px;
+}
+
+.tarjeta-partido-aust {
+    width: 30%;
+    border-radius: 20px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 280px;
+}
+
+.tarjeta-partido-aust p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.tarjeta-partido-aust:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--dorado-copa);
+}
+
 .partido-australia {
-    border-top: 8px solid #2c3e50;
+    border-top: 8px solid #00843D;
     background-color: #b8d9f2;
     padding: 20px;
     
 }
 
+.texto-descripcion-partido {
+    width: 90%;
+    margin-top: 25px;
+    font-size: 1.3rem;
+}
+
+.texto-descripcion-partido span {
+    font-style: italic;
+}
+
 .ficha-partido {
-    width: 40%;
+    width: 90%;
 }
 
 .ficha-partido h2 {
