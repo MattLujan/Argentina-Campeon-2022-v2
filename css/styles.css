@@ -217,12 +217,14 @@ main {
 
 .h1-fase-de-grupos {
     text-decoration: underline;
+    margin: 20px;
 }
 
 .previa-galeria-fotos {
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .fotos-previa-mundial {
@@ -258,6 +260,10 @@ main {
     background-color: var(--blanco-fondo);
     justify-content: space-evenly;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 .header-grupo-c h2 {
@@ -266,16 +272,18 @@ main {
 
 .header-grupo-c p, .tarjeta-partido p {
     font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 .banderas-grupo-c {
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .banderas-grupo-c img {
     height: 80px;
-    width: 120px;
+    width: auto;
     object-fit: cover;
     border-radius: 4px;
 }
@@ -284,6 +292,8 @@ main {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .partido-arabia {
@@ -306,9 +316,14 @@ main {
 .tarjeta-partido {
     width: 30%;
     border-radius: 20px;
-    padding: 10px;
+    padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-width: 280px;
 
 }
 
@@ -327,12 +342,16 @@ main {
 }
 
 .resumen-p-arg-asau, .resumen-p-arg-mex {
-    height: 100px;
+    min-height: 80px;
+    height: auto;
+    margin-bottom: 15px;
 }
  
 .escudos-resultados-goles {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .esc-res-gol-arg, .esc-res-gol-asau, .esc-res-gol-mex, .esc-res-gol-pol, .esc-res-gol-aust, .esc-res-gol-hol, .esc-res-gol-fra {
@@ -342,8 +361,8 @@ main {
 }
 
 .tarjeta-partido img {
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     object-fit: cover; 
 }
 
@@ -357,8 +376,18 @@ main {
     margin-left: 5px;
 }
 
+.gol-messi-mex {
+    margin-right: 40px;
+}
+
 .gol-julian-polonia {
     margin-right: 35px;
+}
+
+/* Para que los videos siempre empiecen a la misma altura */
+.video-container {
+    margin-top: auto;
+    padding-top: 15px;
 }
 
 .video-container iframe {
@@ -820,33 +849,23 @@ tbody tr:hover {
 
 /* =!=!=!=!=!=!=!=! MEDIA QUERIES =!=!=!=!=!=!=!=! */
 
-@media (max-width: 1294px) {
+/* Para pantallas menores a 1294px pero mayores a 768px */
+@media (max-width: 1294px)  {
     .menu-links a {
         padding-left: 0;
+    }
+    
+    .previa-al-mundial h2, .previa-al-mundial p {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
 
 @media (max-width: 768px) {
 
-     main {
-        margin-top: 20px;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .argentina-en-qatar2022 {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .video-item iframe {
-        height: 250px;
-    }
-
+    /* ------- HEADER ------- */
     .logo-afa-header {
-    width: 90px;
+        width: 90px;
     }
 
     .menu-links {
@@ -866,23 +885,24 @@ tbody tr:hover {
         position: static;
     }
 
-    .btn-menu { 
+    .btn-menu {
         display: block;
         font-size: 2rem;
         background: none;
         border: none;
         cursor: pointer;
-        color:var(--dorado-copa)
+        color: var(--dorado-copa)
     }
 
     .menu-links.active {
         display: flex;
     }
 
+    /* ------- FOOTER ------- */
     footer {
-    height: auto;
-    padding: 30px 15px;
-    background-size: contain;
+        height: auto;
+        padding: 30px 15px;
+        background-size: contain;
     }
 
     .navbar-footer {
@@ -909,6 +929,87 @@ tbody tr:hover {
         font-size: 0.75rem;
         line-height: 1.4;
     }
+    
+    /* ======= INDEX.HTML ======= */
 
+     main {
+        margin-top: 20px;
+    }
 
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .argentina-en-qatar2022 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-item iframe {
+        height: 250px;
+    }
+    
+    /* ======= FASE-DE-GRUPOS.HTML ======= */
+
+    .previa-al-mundial h2 {
+        margin-left: 10px;
+    }
+
+    .previa-al-mundial p {
+        margin-left: 10px;
+    }
+
+    .previa-galeria-fotos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fotos-previa-mundial {
+        object-fit: contain;
+        height: auto;
+    } 
+
+    .previa-galeria-fotos figure {
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .contenedor-partidos-fase-de-grupo {
+        display: flex;
+        flex-direction: column;
+        margin-left:20px;
+        margin-bottom: 20px;
+    }
+
+    .tarjeta-partido {
+        width: 75%;
+        margin-bottom: 20px;
+        align-self: center;
+    }
+
+    .header-grupo-c h2 {
+        margin-left: 20px;
+    }
+
+    .header-grupo-c p {
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    
+    .banderas-grupo-c {
+        flex-wrap: wrap;
+        margin-left: 20px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        /* Permite el scroll horizontal solo en la tabla */
+        margin: 0 10px;
+        /* Evita que toque los bordes del celular */
+    }
+
+    .table-container table {
+        min-width: 600px;
+        /* Asegura que las columnas no se aplasten demasiado */
+    }
 }
