@@ -506,6 +506,7 @@ tbody tr:hover {
 .octavos-de-final {
     display: flex;
     margin-top: 40px;
+    padding: 0 20px;
     gap:20px;
     align-items: stretch;
     flex-wrap: wrap;
@@ -514,6 +515,7 @@ tbody tr:hover {
 
 .contenedor-cronica-arg-aus,  .columna-derecha-informacion{
     width: 48%;
+    margin: 0 auto;
 }
 
 .contenedor-cronica-arg-aus h2 {
@@ -535,7 +537,7 @@ tbody tr:hover {
 
 .fotos-cronica-arg-aus img {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -551,8 +553,10 @@ tbody tr:hover {
 
 .video-full-width {
     width: 100%;
+    max-width: 1000px;
     aspect-ratio: 16 / 9;
     padding-top: 0;
+    margin: 40px auto;
 }
 
 .video-full-width iframe {
@@ -562,7 +566,6 @@ tbody tr:hover {
 
 .video-full-width p {
     margin: 0;
-    padding: 25px;
 }
 
 .tarjeta-partido-aust {
@@ -597,8 +600,10 @@ tbody tr:hover {
 }
 
 .texto-descripcion-partido {
-    width: 90%;
-    margin-top: 25px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    order: 1;
     font-size: 1.3rem;
 }
 
@@ -906,6 +911,52 @@ tbody tr:hover {
     }
 }
 
+/* ================== TABLETS (Entre 768px y 1230px) =================== */
+@media (min-width: 769px) and (max-width: 1230px) {
+
+    .contenedor-cronica-arg-aus,
+    .columna-derecha-informacion {
+        width: 100%;
+        /* Ocupan todo el ancho disponible */
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Fotos: Una debajo de la otra al 100% para que sean GIGANTES */
+    .fotos-cronica-arg-aus {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fotos-cronica-arg-aus div {
+        width: 100%;
+    }
+
+    /* Reordenamos la columna derecha para que el texto suba */
+    .columna-derecha-informacion {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .texto-descripcion-partido {
+        order: 1;
+        /* El texto se pone primero */
+        width: 100%;
+        margin: 30px 0;
+        text-align: left;
+        /* O justify para estilo diario */
+    }
+
+    .ficha-partido {
+        order: 2;
+        /* La ficha se pone después del texto */
+        width: 100%;
+        max-width: 600px;
+        /* Para que la ficha no se estire horizontalmente al infinito */
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
 
     /* ------- HEADER ------- */
@@ -1057,4 +1108,31 @@ tbody tr:hover {
         min-width: 600px;
         /* Asegura que las columnas no se aplasten demasiado */
     }
+
+    /* ======= OCTAVOS-DE-FINAL.HTML ======= */
+
+    .contenedor-cronica-arg-aus,
+    .columna-derecha-informacion {
+        width: 100%;
+    }
+
+    /* Centramos el texto y la ficha para que se vea bien en celular */
+    .ficha-partido,
+    .texto-descripcion-partido {
+        width: 100%;
+        /* Que ocupe todo el ancho disponible */
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    /* Si quieres que las fotos no sean tan infinitas en el celu: */
+    .fotos-cronica-arg-aus img {
+        max-height: 400px;
+        object-fit: cover;
+        /* Mantiene la calidad aunque se recorte un poquito */
+    }
 }
+
+
+
