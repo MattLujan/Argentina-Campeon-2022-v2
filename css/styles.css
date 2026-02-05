@@ -15,6 +15,12 @@ img {
     display: block;
 }
 
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    /* Espacio entre párrafos */
+}
+
 :root {
     --blanco-fondo: #ffffff;
     --celeste-afa: #89caf0;
@@ -668,6 +674,7 @@ tbody tr:hover {
     margin-top: 30px;
     gap: 30px;
     margin-bottom: 25px;
+    align-items: flex-start;
 }
 
 .cronica-ficha-partido-arg-hol {
@@ -908,6 +915,84 @@ tbody tr:hover {
     .previa-al-mundial h2, .previa-al-mundial p {
         margin-left: 5%;
         margin-right: 5%;
+    }
+}
+
+@media (max-width: 1230px) {
+    main {
+        padding: 0 20px;
+        /* Esto le da "aire" automático a TODO el contenido de todas las páginas en móvil */
+    }
+    
+    .contenedor-arg-hol {
+        display: flex;
+        flex-direction: column;
+        /* Apilamos las dos columnas grandes */
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* COLUMNA A (Relato + Ficha) */
+    .cronica-ficha-partido-arg-hol {
+        display: flex;
+        flex-direction: column;
+        /* Apilamos contenido interno */
+        width: 100%;
+        padding: 0 25px;
+        order: 1;
+        /* Este bloque entero va primero */
+    }
+
+    .cronica-ficha-partido-arg-hol h2 {
+        text-align: left;
+        /* Título a la izquierda */
+        margin-bottom: 15px;
+        width: 100%;
+        /* Asegura que el alineado funcione */
+    }
+
+    .ficha-partido-arg-hol {
+        order: -1;
+        /* Forzamos que la ficha suba al principio de su columna */
+        width: 90%;
+            /* Ocupa el 90% del ancho del móvil */
+        max-width: 450px;
+            /* Pero no más de 450px para que no se estire */
+        margin: 0 auto 30px auto;
+            /* Centrada y con aire abajo */
+    }
+
+    .batalla-lusail p {
+        text-align: left;
+        /* O 'justify' si preferís estilo diario */
+        line-height: 1.6;
+        /* Mejora la lectura en pantallas chicas */
+    }
+
+    .batalla-lusail {
+        order: 1;
+        /* El relato queda abajo de la ficha */
+    }
+
+    /* COLUMNA B (Fotos + Video) */
+    .multimedia-arg-hol {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 15px;
+        order: 2;
+        /* Este bloque entero va después del relato */
+        align-items: center;
+    }
+
+    .multimedia-arg-hol img {
+        width: 100%;
+        /* Obliga a la imagen a ocupar el ancho de su contenedor */
+        height: auto;
+        /* Mantiene la proporción para que no se vea estirada */
+        display: block;
+        border-radius: 8px;
+        /* Opcional, para que combine con tus tarjetas */
     }
 }
 
