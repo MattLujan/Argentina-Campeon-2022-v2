@@ -791,14 +791,15 @@ tbody tr:hover {
     display: flex;
     margin-top: 25px;
     gap: 25px;
-    align-items: stretch;
+    align-items: flex-start;
 }
 
 .columna-izquierda {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 60%;
+    gap: 20px;
 }
 
 .columna-izquierda h2 {
@@ -816,10 +817,12 @@ tbody tr:hover {
 
 .resumen-final {
     font-size: 1.4rem;
+    line-height: 1.6;
 }
 
 .resumen-final p {
     margin-bottom: 20px;
+    
 }
 
 .columna-derecha {
@@ -833,6 +836,7 @@ tbody tr:hover {
 .columna-derecha h2 {
     text-align: center;
     font-size: 1.6rem;
+    margin-bottom: 20px;
 }
 
 .fotos-goles-final {
@@ -848,6 +852,12 @@ tbody tr:hover {
     border: 2px solid var(--dorado-copa);
     border-radius: 10px;
     object-fit: cover;
+}
+
+.fotos-goles-final figcaption {
+    margin: 0 auto;
+    font-size: 1.1rem;
+    padding-bottom: 20px;
 }
 
 .ficha-partido-final {
@@ -899,6 +909,7 @@ tbody tr:hover {
     border-top: 3px double var(--dorado-copa);
     /* Una línea dorada de gala */
     padding-top: 20px;
+    font-weight: bold;
 }
 
 .poster-final img {
@@ -1033,6 +1044,81 @@ tbody tr:hover {
         width: 100%;
         max-width: 600px;
     }
+
+}
+
+@media (max-width: 1024px) {
+    .final-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ficha-partido-final {
+        order: -1;
+        width: 100%;
+        max-width: 550px;
+        margin: 0 auto 40px auto;
+        border-radius: 20px;
+    }
+
+    .columna-izquierda {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+
+    .columna-derecha {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        order: 1;
+    }
+
+    .resumen-final {
+        order: 1;
+    }
+
+
+    .columna-izquierda .video-container {
+        order: 2;
+        /* El video va después del texto */
+        margin-top: 20px;
+    }
+
+    .fotos-goles-final {
+        display: block;
+        height: auto;
+    }
+
+    .fotos-goles-final img {
+        width: 100%;
+        max-width: 627px;
+        height: auto;
+        min-height: 200px;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    .fotos-goles-final figcaption {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .gol-messi-francia,
+    .gol-di-maria-francia,
+    .gol-mbappe-1,
+    .gol-mbappe-2 {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .escudos-resultados-goles {
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+
+    
 
 }
 
