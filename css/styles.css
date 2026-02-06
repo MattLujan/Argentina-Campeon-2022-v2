@@ -250,7 +250,7 @@ main {
 }
 
 
-.previa-galeria-fotos figcaption, .multimedia-arg-hol figcaption, .contenedor-cronica-arg-cro figcaption {
+.previa-galeria-fotos figcaption, .multimedia-arg-hol figcaption, .contenedor-cronica-arg-cro figcaption, .fotos-cronica-arg-aus figcaption{
     margin: 10px;
     font-size: 1.1rem;
     text-align: center;
@@ -537,7 +537,7 @@ tbody tr:hover {
     flex-direction: column;
 }
 
-.fotos-cronica-arg-aus div {
+.fotos-cronica-arg-aus figure {
     width: 100%;
 }
 
@@ -553,7 +553,7 @@ tbody tr:hover {
 
 .video-container p {
     text-align: center;
-    margin: 25px;
+    /* margin: 15px; */
     font-size: 1.1rem;
 }
 
@@ -741,10 +741,6 @@ tbody tr:hover {
     justify-content: space-around;
 }
 
-.contenedor-cronica-arg-cro {
-    width: 50%;
-}
-
 .contenedor-cronica-arg-cro h2 {
     margin-bottom: 10px;
 }
@@ -759,8 +755,13 @@ tbody tr:hover {
 
 .fotos-cronica-arg-cro {
     display: flex;
+    flex-wrap: wrap;
 }
 
+.fotos-cronica-arg-cro p {
+    padding-top: 20px;
+    margin-right: 10px;
+}
 
 .partido-croacia {
     border-top: 8px solid #1e086f;
@@ -773,7 +774,15 @@ tbody tr:hover {
 }
 
 .foto-julian-gol-croacia {
-    max-width: 400px;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    height: auto;
+    display: block;
+}
+
+.video-solo-movil {
+    display: none;
 }
 
 /* ================== FINAL.HTML ============================== */
@@ -994,6 +1003,37 @@ tbody tr:hover {
         border-radius: 8px;
         /* Opcional, para que combine con tus tarjetas */
     }
+
+    .semifinal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .semifinal .ficha-partido {
+        order: 2;
+        width: 90%;
+        max-width: 500px;
+        margin: 30px auto;
+    }
+
+    .contenedor-cronica-arg-cro {
+        flex-direction: column;
+        order: 1;
+        width: 100%;
+    }
+
+    .video-solo-pc {
+        display: none;
+    }
+
+    .video-solo-movil {
+        display: block;
+        order: 3;
+        width: 100%;
+        max-width: 600px;
+    }
+
 }
 
 /* ================== TABLETS (Entre 768px y 1230px) =================== */
@@ -1013,7 +1053,7 @@ tbody tr:hover {
         align-items: center;
     }
 
-    .fotos-cronica-arg-aus div {
+    .fotos-cronica-arg-aus figure {
         width: 100%;
     }
 
